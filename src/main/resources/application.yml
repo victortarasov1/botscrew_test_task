@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: botscrew.testtask.tarasov
+  datasource:
+    url: jdbc:postgresql://localhost:5432/botscrewdb
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: root
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    defer-datasource-initialization: true
+  sql:
+    init:
+      data-locations: classpath:data.sql
+      mode: always
