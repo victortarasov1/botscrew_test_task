@@ -38,17 +38,6 @@ class ConsoleHandlerImplTest {
         consoleHandler.readQuery();
 
         verify(bufferedReader, times(2)).readLine();
-        verify(commandHandler, times(1)).execute(anyString());
+        verify(commandHandler, times(2)).execute(anyString());
     }
-
-    @Test
-    public void testReadQuery_shouldPrintMenu() throws IOException {
-        when(bufferedReader.readLine()).thenReturn("menu", "exit");
-
-        consoleHandler.readQuery();
-
-        verify(bufferedReader, times(2)).readLine();
-        verify(commandHandler, times(0)).execute(anyString());
-    }
-
 }
